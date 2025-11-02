@@ -5,8 +5,8 @@ A tofu plan to deploy test VMs on Proxmox with Molecule.
 If you are using this with my [delegated Molecule scenario example](https://github.com/haxwithaxe/molecule-delegated-tofu-examplhttps://github.com/haxwithaxe/molecule-delegated-tofu-examplee) use the `example` branch of this repo.
 
 ## Variables
-- `node` - Your Proxmox node to run VMs on. I left the default to what I use internally.
-- `storage_pool` - The storage pool to stick the test VM dives on. I left the default to what I use internally.
+- `node` - Your Proxmox node to run VMs on.
+- `storage_pool` - The storage pool to stick the test VM dives on.
 - `template_id` - The name of the VM template.
 - `distro` - The distro to label the VM with
 - `scenario` - The name of the Molecule scenario to label the VM with.
