@@ -14,27 +14,27 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "molecule_test" {
-  name        = "molecule-${var.distro}-${var.scenario}"
-  target_node = var.node
-  clone = var.template_id
+  name = "molecule-${var.distro}-${var.molecule_scenario}"
+  target_node = var.proxmox_target_node
+  clone = var.proxmox_template_id
   full_clone = false
-  memory = 1024
+  memory = var.memory_size
   cpu {
-    cores = 2
+    cores = var.cpu_cores
   }
-  tags = "tofu,molecule,${var.distro},${var.scenario}"
+  tags = "tofu,molecule,${var.distro},${var.molecule_scenario}"
   agent = 1
 
   network {
     id = 0
-    bridge = "vmbr0"
+    bridge = var.bridge_nic
     model = "virtio"
   }
 
   disk {
     slot = "virtio0"
-    storage = var.storage_pool
-    size = "8G"
+    storage = var.proxmox_storage_pool
+    size = var.disk_size
   }
 }
 
