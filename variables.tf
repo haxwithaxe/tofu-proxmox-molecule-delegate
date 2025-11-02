@@ -26,7 +26,7 @@ variable "bridge_nic" {
   description = "The network bridge interface name"
 }
 variable "cpu_cores" {
-  type = int
+  type = number
   # Single core testing sucks
   default = 2
   description = "CPU core count"
@@ -38,7 +38,7 @@ variable "disk_size" {
   description = "Disk size as a string in bytes or suffixed with `T`, `G`, `M`, or `K`"
 }
 variable "memory_size" {
-  type = int
+  type = number
   # A sane default for most stuff I test
   default = 512
   description = "Memory size in Megabytes"
