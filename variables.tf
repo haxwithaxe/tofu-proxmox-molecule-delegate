@@ -3,6 +3,10 @@ variable "distro" {
   type = string
   description = "The distro of the test VM"
 }
+variable "molecule_instance" {
+  type = string
+  description = "The molecule instance identifier to keep track of what instance the output is from"
+}
 variable "molecule_scenario" {
   type = string
   description = "The name of the molecule scenario that created the VM"

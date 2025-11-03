@@ -42,7 +42,11 @@ resource "proxmox_vm_qemu" "molecule_test" {
 
 
 output "vmid" {
-  value = proxmox_vm_qemu.molecule_test.id
+  value = proxmox_vm_qemu.molecule_test.vmid
+}
+
+output "instance" {
+  value = var.molecule_instance
 }
 
 output "ipv4_address" {
