@@ -24,6 +24,8 @@ resource "proxmox_vm_qemu" "molecule_test" {
   }
   tags = "tofu,molecule,${var.distro},${var.molecule_scenario}"
   agent = 1
+  skip_ipv6 = true
+  agent_timeout = 300
 
   network {
     id = 0
